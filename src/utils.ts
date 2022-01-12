@@ -1,4 +1,6 @@
-export function observerDom(watermarkNode, cb) {
+import { WatermarkProps } from './Watermark'
+
+export function observerDom(watermarkNode: HTMLElement, cb: (node: HTMLElement) => void) {
   if (!watermarkNode) {
     return
   }
@@ -7,9 +9,7 @@ export function observerDom(watermarkNode, cb) {
 
   const observer = new MutationObserver((mutationsList) => {
     if (typeof cb === 'function') {
-      if (cb(watermarkNode)) {
-        return
-      }
+      cb(watermarkNode)
     }
 
     for (const mutation of mutationsList) {
@@ -23,7 +23,7 @@ export function observerDom(watermarkNode, cb) {
   observer.observe(targetNode, config)
 }
 
-export function createWaterMark(watermarkOption) {
+export function createWaterMark(watermarkOption: WatermarkProps) {
   const {
     width = 120,
     height = 80,

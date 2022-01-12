@@ -1,6 +1,15 @@
 import { observerDom, createWaterMark } from './utils'
 
-export function Watermark(watermarkProps) {
+export type WatermarkProps = {
+  width?: number
+  height?: number
+  fontSize?: number
+  fillStyle?: string
+  content?: string
+  rotate?: number
+}
+
+export function Watermark(watermarkProps: WatermarkProps) {
   const backgroundImage = `url("${createWaterMark(watermarkProps)}")`
   const style = {
     position: 'fixed',
