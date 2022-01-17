@@ -1,14 +1,14 @@
 {
-  "name": "watermark",
+  "name": "e-watermark",
   "version": "0.0.1",
-  "repository": "git@github.com:Jcanno/watermark.git",
+  "repository": "git@github.com:Jcanno/e-watermark.git",
   "author": "Jacano",
-  "homepage": "https://github.com/Jcanno/watermark#readme",
+  "homepage": "https://github.com/Jcanno/e-watermark#readme",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c --environment BUILD:development --watch",
-    "build": "yarn types & rollup -c --environment BUILD:production",
+    "build": "pnpm types & rollup -c --environment BUILD:production",
     "prebuild": "rm -rf types es lib",
     "types": "tsc --emitDeclarationOnly"
   },
@@ -18,6 +18,10 @@
     "es",
     "lib",
     "types"
+  ],
+  "keywords": [
+    "easy",
+    "watermark"
   ],
   "devDependencies": {
     "@babel/core": "^7.16.5",
